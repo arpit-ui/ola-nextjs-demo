@@ -88,7 +88,7 @@ export default function Home() {
               <div class="cv-desktop-color-name-wrapper">
                 <div class="cv-desktop-color">color</div>
                 <div class="cv-desktop-color">•</div>
-                <div class="cv-desktop-color-name">Midnight Blue</div>
+                <div class="cv-desktop-color-name">{colorCombination.filter(itm => itm.color ===selectedColor)[0].colorName}</div>
               </div>
               <div className='flex gap-5 colorsIcon'>
                 {colorCombination.map((itm, indx) => {
