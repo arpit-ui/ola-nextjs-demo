@@ -91,15 +91,15 @@ export default function Home() {
                 <div class="cv-desktop-color-name">Midnight Blue</div>
               </div>
               <div className='flex gap-5 colorsIcon'>
-                {colorCombination.map(itm => {
-                  return <img onClick={() => onColorSelected(itm.color)} className={selectedColor === itm.color ? 'selectedColor' : 'colorSelection'} src={itm.url} />
+                {colorCombination.map((itm, indx) => {
+                  return <img key={indx} onClick={() => onColorSelected(itm.color)} className={selectedColor === itm.color ? 'selectedColor' : 'colorSelection'} src={itm.url} />
                 })}
               </div>
               <div className='choose-model'>
                 <div className='choose-model-header'>CHOOSE MODEL AND VARIANT</div>
                 <div className='modalSelection flex gap-2'>
                   {
-                    variants.map(itm => <div onClick={() => changeScooterName(itm.scooter)} className={selectedScooter === itm.scooter ? 'selectedScooter' : 'scooter'} ><img src={itm.url} /></div>)
+                    variants.map((itm, indx) => <div key={indx} onClick={() => changeScooterName(itm.scooter)} className={selectedScooter === itm.scooter ? 'selectedScooter' : 'scooter'} ><img src={itm.url} /></div>)
                   }
                 </div>
               </div>
@@ -130,9 +130,9 @@ export default function Home() {
                 </div>
               </div>
               <ul className="CTAWrapper">
-                {ctaData.map(itm =>
+                {ctaData.map((itm, indx) =>
                 (
-                  <li class="CTAliWrapper CTAliWrapper1">
+                  <li key={indx} class="CTAliWrapper CTAliWrapper1">
                     <div class="CTAlistWrapper">
                       <div class="CTAlistWrapper_Img">
                         <img src={itm.url} alt="icon" />
@@ -170,4 +170,3 @@ export default function Home() {
     </div>
   );
 }
-
