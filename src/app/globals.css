@@ -1,0 +1,338 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.container{
+  display: flex;
+}
+.scooter-image {
+  width: calc(100% - 400px);
+  .slick-next::before {
+    cursor: pointer;
+    content: "";
+    position: absolute;
+    background: url(https://assets.olaelectric.com/olaelectric-videos/configs-static/assets/newPurchase/banner-right-arrow.svg) top no-repeat;
+    opacity: 1;
+    height: 50px;
+    width: 40px;
+    right: 437px;
+    top: 220px;
+  }
+
+  .slick-prev::before {
+    cursor: pointer;
+    content: "";
+    position: absolute;
+    background: url(https://assets.olaelectric.com/olaelectric-videos/configs-static/assets/newPurchase/banner-left-arrow.svg) top no-repeat;
+    opacity: 1;
+    height: 50px;
+    width: 40px;
+    left: 20px;
+    top: 217px;
+  }
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.right-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 16px 16px 0 16px;
+  background: #fff;
+
+  .upper-content{
+    height: 85vh;
+    overflow-y: scroll;
+  }
+
+  .choose-scooter {
+    justify-content: space-between;
+
+    .pincodeContainer {
+      cursor: pointer;
+      .dispatch-date {
+        display: flex;
+        font-size: 16px;
+        line-height: 20px;
+        color: #000;
+        padding: 0 10px;
+      }
+      .est-dispatch-img{
+        padding: 10px;
+      }
+    }
+  }
+  .cv-desktop-color-name-wrapper {
+    display: flex;
+    gap: 5px;
+    margin-top: 16px;
+    .cv-desktop-color{
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      color: #999;
+      text-transform: uppercase;
+    }
+    .cv-desktop-color-name {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      color: #000;
+    }
+  }
+
+  .choose-model-header{
+    font-size: 13px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
+
+  .modalSelection {
+    background: #f9f9f9;
+    padding: 16px;
+    justify-content: space-between;
+
+    .selectedScooter{
+      cursor: pointer;
+      border: 2.4px solid #92c83e;
+      padding: 4px;
+    }
+
+    .scooter{
+      cursor: pointer;
+      padding: 4px;
+    }
+  }
+
+
+  .new-extended-warranty-wrapper {
+    border-radius: 0px 0px 8px 8px;
+    background: linear-gradient(180deg, rgba(232, 247, 238, 0) 0%, #E8F7EE 100%);
+    display: flex;
+    justify-content: space-between;
+    font-family: "Gentona Medium Italic";
+    font-size: 14px;
+    font-weight: 400;
+    color: #16aa51;
+    padding: 8px;
+    align-items: center;
+    .new-extended-warranty-left {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+
+  .model-selection-box-border-np {
+    background-color: #fff !important;
+    border: 1.5px solid #16aa51 !important;
+    position: relative;
+  }
+
+  .variant-details-container{
+    border: 1.5px solid #16aa51 !important;
+    margin-top: 32px;
+
+  }
+    .variant-details-sub-container{
+      padding: 16px;
+      background-color: #fff !important;
+  
+      .border-width{
+        border-width: 0.1px;
+        margin-top: 8px;
+      }
+  
+      .details-container{
+        margin-top: 8px;
+        .title-container {
+          display: flex;
+          justify-content: space-between;
+          .title {
+            color: #000;
+            opacity: .3;
+            font-size: 14px;
+          }
+          .title-val {
+            width: 33.33%;
+          }
+        }
+        .title-container-val {
+          display: flex;
+
+          .title-val-1 {
+            width: 46%;
+          }
+          .title-val-2 {
+            width: 32%;
+          }
+        }
+      }
+    }
+
+    .estimated-dispatch-container{
+      display: flex;
+      background: #e8f7ee;
+      color: #16aa51;
+      font-size: 14px;
+
+      padding: 8px;
+
+      .deliveryInfoIcon{
+        cursor: pointer;
+      }
+  
+    }
+  
+}
+
+.colorsIcon {
+  width: 40.8px;
+  margin-top: 16px;
+  justify-content: space-between;
+
+  .selectedColor {
+    cursor: pointer;
+    border: 2.4px solid #92c83e;
+    border-radius: 30px;
+  }
+  .colorSelection {
+    cursor: pointer;
+  }
+}
+
+
+.CTAWrapper .CTAliWrapper:first-child {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.CTAWrapper .CTAliWrapper {
+  font-size: 16px;
+  line-height: 24px;
+  position: relative;
+  cursor: pointer;
+  font-family: "Gentona Book";
+}
+.CTAWrapper .CTAliWrapper {
+  text-align: left;
+}
+
+
+.CTAlistWrapper{
+  display: flex;
+  padding-bottom: 16px;
+  margin-top: 32px;
+
+  .CTAlistWrapper_Img {
+    width: 24px;
+    height: 32px;
+    margin-right: 18px;
+    display: flex;
+    align-items: center;
+  }
+  .CTAlistWrapper_Desc {
+    display: grid;
+  }
+
+  .CTAlistWrapper_Desc_Title {
+    font-size: 13px;
+    line-height: 16px;
+    font-family: "Gentona Normal";
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .CTAlistWrapper_Desc_SubTitle {
+    font-size: 16px;
+    line-height: 20px;
+    font-family: "Gentona Normal";
+    font-weight: 500;
+  }
+
+  .CTAlistWrapper_Arrow {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+  }
+}
+
+.footer {
+  padding: 16px;
+  position: fixed;
+  width: 400px;
+  max-width: 100vw;
+  right: 0;
+  bottom: 0;
+  display: initial;
+  min-height: 86px;
+  background: #fff;
+  box-shadow: 0px 0px 1px rgba(0,0,0,.24), 0px 1px 3px rgba(0,0,0,.12);
+
+  .footer-data {
+    display: flex;
+    .left-footer-data {
+      width: 40%;
+      font-family: "Gentona Normal";
+      font-weight: 500;
+      font-size: 21px;
+      line-height: 32px;
+      color: #000;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .right-footer-data {
+      width: 60%;
+    }
+  }
+}
+
+.btn-reserve {
+  height: 48px;
+  background: #000;
+  font-family: "Gentona Medium";
+  font-size: 16px;
+  opacity: 1;
+  line-height: 24px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 76px;
+  cursor: pointer;
+  margin: 0 auto;
+}
